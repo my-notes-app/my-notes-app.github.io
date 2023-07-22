@@ -7,8 +7,8 @@ const registerTemplate = (onRegister) => html`
       <div class="register-container">
         <h1>Register</h1>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" placeholder="Type your email." />
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Type your username." />
 
         <label for="password">Password:</label>
         <input type="password" name="password" placeholder="Type your password." />
@@ -35,9 +35,9 @@ export function registerView(ctx) {
   async function onRegister(e) {
     e.preventDefault();
 
-    const { email, password, rePass } = Object.fromEntries(new FormData(document.querySelector('form')));
+    const { username, password, rePass } = Object.fromEntries(new FormData(document.querySelector('form')));
 
-    if (email === '' || password === '' || rePass === '') {
+    if (username === '' || password === '' || rePass === '') {
       return alert('All fields required!');
     }
 
@@ -45,7 +45,7 @@ export function registerView(ctx) {
       return alert("Password don't match!");
     }
 
-    await register(email, password);
+    await register(username, password);
     ctx.page.redirect('/');
   }
 }

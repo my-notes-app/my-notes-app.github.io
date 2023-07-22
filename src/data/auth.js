@@ -1,23 +1,18 @@
 import { removeUser, setUser } from '../util.js';
 import * as api from './api.js';
 
-const endpoints = {
-  register: '/users/register',
-  logout: '/users/logout',
-  login: '/users/login',
-};
+export async function register(username, password) {
+  const user = await api.post('/users', { username, password });
+  user.username = username;
+  setUser(user);
+}
 
-export async function register(email, password) {
-  const user = await api.post(endpoints.register, { email, password });
+export async function login(username, password) {
+  const user = await api.post('/login', { username, password });
+  user.username = username;
   setUser(user);
 }
 
 export async function logout() {
-  await api.get(endpoints.logout);
   removeUser();
-}
-
-export async function login(email, password) {
-  const user = await api.post(endpoints.login, { email, password });
-  setUser(user);
 }

@@ -1,13 +1,18 @@
 import { getUser, removeUser } from '../util.js';
 
-const host = 'http://localhost:3030';
+const host = 'https://parseapi.back4app.com';
+const appId = 'bykAgbYn3443bbzegxKl0N0SA9gymKXr3wK1dCa6';
+const apiKey = 'Cz8yaWgVxkw5sxytvJ0eTeDMNfJUW6msZZ8lDRFb';
 
 async function requester(method, url, data) {
   const userData = getUser();
 
   const options = {
     method,
-    headers: {},
+    headers: {
+      'X-Parse-Application-Id': appId,
+      'X-Parse-JavaScript-Key': apiKey,
+    },
   };
 
   if (data !== undefined) {
@@ -16,7 +21,7 @@ async function requester(method, url, data) {
   }
 
   if (userData) {
-    options.headers['X-Authorization'] = userData.accessToken;
+    options.headers['X-Parse-Session-Token'] = userData.sessionToken;
   }
 
   try {
@@ -24,20 +29,21 @@ async function requester(method, url, data) {
 
     let result;
     if (response.status !== 204) {
-      result = response.json();
+      result = await response.json();
     }
 
     if (response.ok === false) {
-      if (response.status === 403) {
+      if (result.code === 209) {
         removeUser();
       }
+
       const error = result;
       throw error;
     }
 
     return result;
   } catch (error) {
-    alert(error.message);
+    alert(error.error);
     throw error;
   }
 }
