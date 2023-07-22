@@ -1,0 +1,46 @@
+#login-page {
+  background-color: rgb(0, 155, 216);
+  max-width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container h1 {
+  margin: auto;
+  color: azure;
+  text-shadow: 1px 1px 1px black;
+}
+
+.login-container label {
+  padding: 15px 0px 5px 20px;
+}
+
+.login-container input {
+  width: 90%;
+  margin: auto;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.login-container p {
+  text-align: center;
+}
+
+.login-container p a {
+  font-size: medium;
+  font-weight: 500;
+  color: rgb(250, 207, 65);
+}
+
+#btnLogin {
+  margin-top: 40px;
+  width: 200px;
+}

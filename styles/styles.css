@@ -1,0 +1,81 @@
+@import '/node_modules/normalize.css/normalize.css';
+@import '/styles/hover.css';
+@import '/styles/home.css';
+@import '/styles/register.css';
+@import '/styles/login.css';
+@import '/styles/my-notes.css';
+@import '/styles/create.css';
+@import '/styles/edit.css';
+@import '/styles/mobile.css';
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #000000;
+  opacity: 1;
+  background-image: repeating-linear-gradient(45deg, #080808 25%, transparent 25%, transparent 75%, #080808 75%, #080808),
+    repeating-linear-gradient(45deg, #080808 25%, #000000 25%, #000000 75%, #080808 75%, #080808);
+  background-position: 0 0, 26px 26px;
+  background-size: 52px 52px;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+  text-shadow: 1px 1px 1px black;
+  text-decoration: none;
+  color: rgb(240, 238, 140);
+  font-size: larger;
+  font-weight: 900;
+  transition: all 0.3s;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+  width: 100%;
+  background-color: rgb(0, 155, 216);
+}
+
+.logo {
+  padding-top: 3px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.menu {
+  padding-right: 15px;
+  padding-top: 18px;
+}
+
+.btnMenu {
+  padding-right: 10px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer {
+  height: 25px;
+  background-color: rgb(0, 155, 216);
+}
+
+.footer p {
+  text-align: center;
+  padding-top: 3px;
+  color: beige;
+  text-shadow: 1px 1px 1px black;
+}
+
+.footer p a {
+  font-size: medium;
+  padding-left: 5px;
+}

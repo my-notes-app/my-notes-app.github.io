@@ -1,0 +1,6 @@
+@media screen and (max-height: 800px) {
+  #create-page {
+    height: 500px;
+    overflow: auto;
+  }
+}
