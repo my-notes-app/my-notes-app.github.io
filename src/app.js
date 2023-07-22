@@ -1,5 +1,5 @@
-import { render } from '../node_modules/lit-html/lit-html.js';
-import page from '../node_modules/page/page.mjs';
+import { render } from '../src/lib/lit-html.js';
+import page from '../src/lib/page.mjs';
 import { getUser } from './util.js';
 import { layoutTemplate } from './views/layout.js';
 import { homeView } from './views/home.js';

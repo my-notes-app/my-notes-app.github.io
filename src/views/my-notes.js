@@ -1,4 +1,4 @@
-import { html } from '../../node_modules/lit-html/lit-html.js';
+import { html } from '../lib/lit-html.js';
 import { getAllGames } from '../data/games.js';
 
 const noteCard = (note) => html`
