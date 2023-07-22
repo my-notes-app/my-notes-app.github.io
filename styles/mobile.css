@@ -3,4 +3,9 @@
     height: 500px;
     overflow: auto;
   }
+
+  #edit-page {
+    height: 500px;
+    overflow: auto;
+  }
 }

@@ -1,5 +1,5 @@
 import { html } from '../lib/lit-html.js';
-import { createGame } from '../data/games.js';
+import { createNote } from '../data/notes.js';
 
 const createTemplate = (onCreate, btnBackgroundColor, btnTextColor) => html`
   <section id="create-page">
@@ -10,8 +10,8 @@ const createTemplate = (onCreate, btnBackgroundColor, btnTextColor) => html`
         <label for="title">Title</label>
         <input type="text" name="title" placeholder="Your title here." />
 
-        <label for="content">Content</label>
-        <textarea name="content" cols="30" rows="10" placeholder="Your content here."></textarea>
+        <label for="text">Text</label>
+        <textarea name="text" cols="30" rows="10" placeholder="Your content here."></textarea>
 
         <div class="background-color-container">
           <p>Select background color</p>
@@ -49,10 +49,13 @@ export function createView(ctx) {
   async function onCreate(e) {
     e.preventDefault();
 
-    const { title, content, backgroundColor, textColor } = Object.fromEntries(new FormData(document.querySelector('form')));
+    const { title, text, backgroundColor, textColor } = Object.fromEntries(new FormData(document.querySelector('form')));
 
-    // Write a logic for empty fields!!!;
-    await createGame({ title, category: backgroundColor, maxLevel: textColor, imageUrl: '', summary: content });
+    if ([title, text, backgroundColor, textColor].some((el) => el === '')) {
+      return alert('All fields are required!');
+    }
+
+    await createNote({ title, text, backgroundColor, textColor });
     ctx.page.redirect('/my-notes');
   }
 

@@ -1,5 +1,5 @@
 import { html } from '../lib/lit-html.js';
-import { editGameById, getGameById } from '../data/games.js';
+import { editNoteById, getNoteById } from '../data/notes.js';
 
 const editTemplate = (note, onEdit, btnBackgroundColor, btnTextColor) => html`
   <section id="edit-page">
@@ -10,8 +10,8 @@ const editTemplate = (note, onEdit, btnBackgroundColor, btnTextColor) => html`
         <label for="title">Title</label>
         <input type="text" name="title" .value=${note.title} />
 
-        <label for="content">Content</label>
-        <textarea name="content" cols="30" rows="10" .value=${note.summary}></textarea>
+        <label for="text">Text</label>
+        <textarea name="text" cols="30" rows="10" .value=${note.text}></textarea>
 
         <div class="background-color-container">
           <p>Select background color</p>
@@ -25,7 +25,7 @@ const editTemplate = (note, onEdit, btnBackgroundColor, btnTextColor) => html`
           </div>
         </div>
 
-        <input type="color" id="background-color-picker" name="backgroundColor" value=${note.category} />
+        <input type="color" id="background-color-picker" name="backgroundColor" value=${note.backgroundColor} />
 
         <div class="text-color-container">
           <p>Select text color</p>
@@ -35,7 +35,7 @@ const editTemplate = (note, onEdit, btnBackgroundColor, btnTextColor) => html`
           </div>
         </div>
 
-        <input type="color" id="text-color-picker" name="textColor" value=${note.maxLevel} />
+        <input type="color" id="text-color-picker" name="textColor" value=${note.textColor} />
 
         <input id="btnEdit" type="submit" value="Edit" />
       </div>
@@ -45,17 +45,20 @@ const editTemplate = (note, onEdit, btnBackgroundColor, btnTextColor) => html`
 
 export async function editView(ctx) {
   const id = ctx.params.id;
-  const note = await getGameById(id);
+  const note = await getNoteById(id);
 
   ctx.render(editTemplate(note, onEdit, btnBackgroundColor, btnTextColor));
 
   async function onEdit(e) {
     e.preventDefault();
 
-    const { title, content, backgroundColor, textColor } = Object.fromEntries(new FormData(document.querySelector('form')));
+    const { title, text, backgroundColor, textColor } = Object.fromEntries(new FormData(document.querySelector('form')));
 
-    // Write a logic for empty fields!!!;
-    await editGameById(id, { title, category: backgroundColor, maxLevel: textColor, imageUrl: '', summary: content });
+    if ([title, text, backgroundColor, textColor].some((el) => el === '')) {
+      return alert('All fields are required!');
+    }
+
+    await editNoteById(id, { title, text, backgroundColor, textColor });
     ctx.page.redirect('/my-notes');
   }
 
