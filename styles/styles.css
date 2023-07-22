@@ -1,4 +1,4 @@
-@import '../src/lib/normalize.css';
+@import './normalize.css';
 @import '/styles/hover.css';
 @import '/styles/home.css';
 @import '/styles/register.css';
