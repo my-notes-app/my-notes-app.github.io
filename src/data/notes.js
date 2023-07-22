@@ -19,5 +19,6 @@ export async function deleteNoteById(noteId) {
 }
 
 export async function editNoteById(noteId, noteObj) {
+  addOwner(noteObj);
   await put('/classes/Notes/' + noteId, noteObj);
 }
