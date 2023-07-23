@@ -49,6 +49,8 @@ nav {
 }
 
 .menu {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size:medium;
   padding-right: 15px;
   padding-top: 18px;
 }

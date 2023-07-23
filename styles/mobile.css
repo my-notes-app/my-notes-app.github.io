@@ -9,3 +9,9 @@
     overflow: auto;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .my-notes-container {
+    height: calc(100vh - 150px);
+  }
+}
