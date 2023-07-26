@@ -10,6 +10,7 @@
   border-radius: 10px;
   border: 2px solid white;
   width: fit-content;
+  line-height: 1.50;
 }
 
 .main h1 {
@@ -26,6 +27,14 @@
   padding: 5px;
   text-shadow: 1px 1px 1px black;
   margin-top: 0;
+}
+
+.main p {
+  text-align: center;
+  color: rgb(236, 236, 236);
+  padding: 5px;
+  text-shadow: 1px 1px 1px black;
+  margin-bottom: 10px;
 }
 
 .login-register {
