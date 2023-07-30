@@ -17,10 +17,10 @@
 
   .menu {
     font-size: small;
-    padding-top: 23px;
+    padding-top: 30px;
   }
 
   a {
-    color: green !important;
+    color: red !important;
   }
 }
