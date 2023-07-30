@@ -1,10 +1,10 @@
 @media screen and (max-width: 500px) {
   .menu {
     font-size: small;
-    padding-top: 40px !important;
+    padding-top: 23px !important;
   }
 
   a {
-    color: red !important;
+    color: rgb(0, 255, 115) !important;
   }
 }
