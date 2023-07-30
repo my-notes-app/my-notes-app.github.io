@@ -8,11 +8,15 @@
 @import '/styles/edit.css';
 @import '/styles/mobile.css';
 
+html {
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch;
+}
+
 body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow: auto;
   background-color: #000000;
   opacity: 1;
   background-image: repeating-linear-gradient(45deg, #080808 25%, transparent 25%, transparent 75%, #080808 75%, #080808),
