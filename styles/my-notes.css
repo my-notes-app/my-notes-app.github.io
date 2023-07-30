@@ -3,8 +3,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  overflow: auto;
-  height: calc(100vh - 100px);
+  overflow: hidden;
+  height:fit-content;
 }
 
 .buttons-card {
