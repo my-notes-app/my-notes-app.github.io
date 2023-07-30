@@ -5,7 +5,7 @@
   margin-top: 50px;
   border-radius: 10px;
   border: 2px solid white;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -43,7 +43,7 @@
 }
 
 .background-color-container p {
-  padding: 15px 0px 5px 30px;
+  padding: 15px 0px 10px 30px;
   margin: 0;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .text-color-container p {
-  padding: 15px 0px 5px 30px;
+  padding: 15px 0px 10px 30px;
   margin: 0;
 }
 
