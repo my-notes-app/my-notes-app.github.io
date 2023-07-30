@@ -9,8 +9,9 @@
 @import '/styles/mobile.css';
 
 html {
-  overflow-y: scroll !important;
-  -webkit-overflow-scrolling: touch;
+  /* overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch; */
+  overflow: hidden;
 }
 
 body {
@@ -20,9 +21,9 @@ body {
   background-color: #000000;
   opacity: 1;
   background-image: repeating-linear-gradient(45deg, #080808 25%, transparent 25%, transparent 75%, #080808 75%, #080808),
-    repeating-linear-gradient(45deg, #080808 25%, #000000 25%, #000000 75%, #080808 75%, #080808);
-  background-position: 0 0, 26px 26px;
-  background-size: 52px 52px;
+    repeating-linear-gradient(45deg, #080808 25%, #000000 25%, #000000 75%, #080808 75%, #080808) !important;
+  background-position: 0 0, 26px 26px !important;
+  background-size: 52px 52px !important;
   font-family: Calibri, 'Trebuchet MS', sans-serif;
 }
 
