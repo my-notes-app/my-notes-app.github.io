@@ -31,8 +31,5 @@ export async function homeView(ctx) {
   const userData = getUser();
   const time = new Date();
 
-  setInterval(function () {
-    const time = new Date();
-    ctx.render(homeTemplate(userData, time));
-  }, 1000);
+  ctx.render(homeTemplate(userData, time));
 }

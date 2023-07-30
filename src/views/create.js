@@ -44,6 +44,7 @@ const createTemplate = (onCreate, btnBackgroundColor, btnTextColor) => html`
 `;
 
 export function createView(ctx) {
+  clearInterval();
   ctx.render(createTemplate(onCreate, btnBackgroundColor, btnTextColor));
 
   async function onCreate(e) {
