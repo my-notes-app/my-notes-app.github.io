@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   overflow: hidden;
-  height:fit-content;
+  min-height: calc(100vh - 51px);
 }
 
 .buttons-card {
