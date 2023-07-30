@@ -15,9 +15,12 @@
     height: calc(100vh - 150px);
   } */
 
+  a {
+    color: red;
+  }
+
   .menu {
     font-size: small;
-    color: red;
-    padding-top: 5px;
+    padding-top: 25px;
   }
 }
