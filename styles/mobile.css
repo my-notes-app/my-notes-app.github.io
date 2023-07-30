@@ -17,9 +17,10 @@
 
   .menu {
     font-size: small;
+    padding-top: 23px;
   }
 
   a {
-    color: red !important;
+    color: green !important;
   }
 }
