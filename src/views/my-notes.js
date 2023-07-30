@@ -1,4 +1,5 @@
 import { html } from '../lib/lit-html.js';
+import { until } from '../lib/directives/until.js';
 import { getAllNotes } from '../data/notes.js';
 
 const noteCard = (note) => html`
@@ -12,15 +13,26 @@ const noteCard = (note) => html`
   </div>
 `;
 
-const myNotesTemplate = (notes) => html`
+const myNotesTemplate = (promise) => html`
   <section>
-    <div class="my-notes-container">${notes.map((note) => noteCard(note))}</div>
+    <div class="my-notes-container">
+      ${until(
+        promise,
+        html`
+          <h1 style="color: yellow; font-size: medium">Loading...</h1>
+        `
+      )}
+    </div>
   </section>
 `;
 
 export async function myNotesView(ctx) {
-  const notesObj = await getAllNotes();
-  const notes = notesObj.results;
+  async function loadNotes() {
+    const notesObj = await getAllNotes();
+    const notes = notesObj.results;
 
-  ctx.render(myNotesTemplate(notes));
+    return notes.map((note) => noteCard(note));
+  }
+
+  ctx.render(myNotesTemplate(loadNotes()));
 }

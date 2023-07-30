@@ -1,23 +1,7 @@
-/* @media screen and (max-height: 800px) {
-  #create-page {
-    height: 500px;
-    overflow: auto;
-  }
-
-  #edit-page {
-    height: 500px;
-    overflow: auto;
-  }
-} */
-
 @media screen and (max-width: 500px) {
-  /* .my-notes-container {
-    height: calc(100vh - 150px);
-  } */
-
   .menu {
     font-size: small;
-    padding-top: 30px;
+    padding-top: 40px;
   }
 
   a {
