@@ -1,5 +1,7 @@
 .wrapper {
   position: relative;
+  height: calc(100vh - 100px);
+  overflow: auto;
 }
 
 .main {
@@ -10,7 +12,7 @@
   border-radius: 10px;
   border: 2px solid white;
   width: fit-content;
-  line-height: 1.50;
+  line-height: 1.5;
 }
 
 .main h1 {
@@ -49,7 +51,7 @@
 .login-register a {
   font-size: medium;
   font-weight: 500;
-  color:rgb(250, 207, 65);
+  color: rgb(250, 207, 65);
 }
 
 .register {

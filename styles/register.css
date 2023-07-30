@@ -6,6 +6,8 @@
   border-radius: 10px;
   border: 2px solid white;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  height: calc(100vh - 100px);
+  overflow: auto;
 }
 
 .register-container {

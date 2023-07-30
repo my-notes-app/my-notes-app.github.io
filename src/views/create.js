@@ -41,6 +41,14 @@ const createTemplate = (onCreate, btnBackgroundColor, btnTextColor) => html`
       </div>
     </form>
   </section>
+  <footer>
+    <div class="footer">
+      <p>
+        This app was made by Nikolay Tzolov.
+        <a href="http://github.com/ntzolov">GitHub</a>
+      </p>
+    </div>
+  </footer>
 `;
 
 export function createView(ctx) {
