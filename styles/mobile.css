@@ -1,7 +1,7 @@
 @media screen and (max-width: 500px) {
   .menu {
     font-size: small;
-    padding-top: 40px;
+    padding-top: 40px !important;
   }
 
   a {

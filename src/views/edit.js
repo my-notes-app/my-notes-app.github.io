@@ -1,5 +1,15 @@
 import { html } from '../lib/lit-html.js';
+import { until } from '../lib/directives/until.js';
 import { editNoteById, getNoteById } from '../data/notes.js';
+
+const loadPage = (promise) => html`
+  ${until(
+    promise,
+    html`
+      <h1 style="color: yellow; font-size: medium; text-align: center">Loading...</h1>
+    `
+  )}
+`;
 
 const editTemplate = (note, onEdit, btnBackgroundColor, btnTextColor) => html`
   <section id="edit-page">
@@ -44,14 +54,18 @@ const editTemplate = (note, onEdit, btnBackgroundColor, btnTextColor) => html`
 `;
 
 export async function editView(ctx) {
-  const id = ctx.params.id;
-  const note = await getNoteById(id);
+  async function loadNote() {
+    const id = ctx.params.id;
+    const note = await getNoteById(id);
+    return ctx.render(editTemplate(note, onEdit, btnBackgroundColor, btnTextColor));
+  }
 
-  ctx.render(editTemplate(note, onEdit, btnBackgroundColor, btnTextColor));
+  ctx.render(loadPage(loadNote()));
 
   async function onEdit(e) {
     e.preventDefault();
 
+    const id = ctx.params.id;
     const { title, text, backgroundColor, textColor } = Object.fromEntries(new FormData(document.querySelector('form')));
 
     if ([title, text, backgroundColor, textColor].some((el) => el === '')) {

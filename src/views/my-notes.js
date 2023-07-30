@@ -19,7 +19,7 @@ const myNotesTemplate = (promise) => html`
       ${until(
         promise,
         html`
-          <h1 style="color: yellow; font-size: medium">Loading...</h1>
+          <h1 style="color: yellow; font-size: medium; text-align: center">Loading...</h1>
         `
       )}
     </div>
