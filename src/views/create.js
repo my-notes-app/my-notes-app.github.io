@@ -44,8 +44,12 @@ const createTemplate = (onCreate, btnBackgroundColor, btnTextColor) => html`
 `;
 
 export function createView(ctx) {
-  clearInterval();
   ctx.render(createTemplate(onCreate, btnBackgroundColor, btnTextColor));
+
+  const menu = document.querySelector('.menu');
+  const menuButtons = menu.querySelectorAll('a');
+  menuButtons.forEach((btn) => btn.classList.remove('active-btn'));
+  document.getElementById('create-btn').classList.add('active-btn');
 
   async function onCreate(e) {
     e.preventDefault();

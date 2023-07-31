@@ -28,7 +28,7 @@
 
 .main p {
   text-align: center;
-  color: rgb(231, 137, 49);
+  color: rgb(255, 214, 116);
   padding: 5px;
   text-shadow: 1px 1px 1px black;
   margin-bottom: 10px;
@@ -45,7 +45,7 @@
 
 .login-register a {
   font-size: medium;
-  font-weight: 500;
+  font-weight: 900;
   color: rgb(250, 207, 65);
 }
 

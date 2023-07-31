@@ -35,4 +35,9 @@ export async function myNotesView(ctx) {
   }
 
   ctx.render(myNotesTemplate(loadNotes()));
+
+  const menu = document.querySelector('.menu');
+  const menuButtons = menu.querySelectorAll('a');
+  menuButtons.forEach((btn) => btn.classList.remove('active-btn'));
+  document.getElementById('my-notes-btn').classList.add('active-btn');
 }

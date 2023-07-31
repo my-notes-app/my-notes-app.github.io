@@ -1,7 +1,7 @@
 import { html } from '../lib/lit-html.js';
 import { login } from '../data/auth.js';
 
-const loginTemplate = (onLogin) => html`
+const loginTemplate = (onLogin, loginDemo) => html`
   <section id="login-page">
     <form @submit=${onLogin}>
       <div class="login-container">
@@ -21,13 +21,19 @@ const loginTemplate = (onLogin) => html`
             <a href="/register">here</a>
           </span>
         </p>
+        <button type="button" id="login-demo-user" @click=${loginDemo}>Click here to login with demo user</button>
       </div>
     </form>
   </section>
 `;
 
 export function loginView(ctx) {
-  ctx.render(loginTemplate(onLogin));
+  ctx.render(loginTemplate(onLogin, loginDemo));
+
+  const menu = document.querySelector('.menu');
+  const menuButtons = menu.querySelectorAll('a');
+  menuButtons.forEach((btn) => btn.classList.remove('active-btn'));
+  document.getElementById('login-btn').classList.add('active-btn');
 
   async function onLogin(e) {
     e.preventDefault();
@@ -40,5 +46,11 @@ export function loginView(ctx) {
 
     await login(username, password);
     ctx.page.redirect('/');
+  }
+
+  function loginDemo() {
+    document.querySelector('[name="username"]').value = 'demo';
+    document.querySelector('[name="password"]').value = 'demo';
+    document.querySelector('#btnLogin').click();
   }
 }

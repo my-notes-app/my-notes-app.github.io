@@ -10,13 +10,13 @@ export const layoutTemplate = (userData, content) =>
         <div class="menu">
           ${userData
             ? html`
-                <a href="/create" class="btnMenu">Create note</a>
-                <a href="/my-notes" class="btnMenu">My notes</a>
+                <a href="/create" id="create-btn" class="btnMenu">Create note</a>
+                <a href="/my-notes" id="my-notes-btn" class="btnMenu">My notes</a>
                 <a href="/logout" class="btnMenu">Logout</a>
               `
             : html`
-                <a href="/login" class="btnMenu">Login</a>
-                <a href="/register" class="btnMenu">Register</a>
+                <a href="/login" id="login-btn" "btnMenu">Login</a>
+                <a href="/register" id="register-btn" class="btnMenu">Register</a>
               `}
         </div>
       </nav>

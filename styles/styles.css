@@ -95,3 +95,7 @@ footer {
   font-size: medium;
   padding-left: 5px;
 }
+
+.active-btn {
+  color: rgb(250, 207, 65);
+}

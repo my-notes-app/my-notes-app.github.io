@@ -32,4 +32,8 @@ export async function homeView(ctx) {
   const time = new Date();
 
   ctx.render(homeTemplate(userData, time));
+
+  const menu = document.querySelector('.menu');
+  const menuButtons = menu.querySelectorAll('a');
+  menuButtons.forEach((btn) => btn.classList.remove('active-btn'));
 }

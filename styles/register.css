@@ -34,11 +34,12 @@
 
 .register-container p a {
   font-size: medium;
-  font-weight: 500;
+  font-weight: 900;
   color: rgb(250, 207, 65);
 }
 
 #btnRegister {
   margin-top: 40px;
   width: 200px;
+  cursor: pointer;
 }

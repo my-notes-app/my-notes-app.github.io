@@ -32,6 +32,11 @@ const registerTemplate = (onRegister) => html`
 export function registerView(ctx) {
   ctx.render(registerTemplate(onRegister));
 
+  const menu = document.querySelector('.menu');
+  const menuButtons = menu.querySelectorAll('a');
+  menuButtons.forEach((btn) => btn.classList.remove('active-btn'));
+  document.getElementById('register-btn').classList.add('active-btn');
+
   async function onRegister(e) {
     e.preventDefault();
 
