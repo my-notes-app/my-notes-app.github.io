@@ -1,0 +1,64 @@
+.main {
+  background-color: $main-background-color;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  border: 2px solid $white-text-color;
+  width: fit-content;
+  line-height: 1.5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  h1 {
+    text-align: center;
+    color: $white-text-color;
+    padding: 5px;
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    text-align: center;
+    color: $white-text-color;
+    padding: 5px;
+    text-shadow: 1px 1px 1px black;
+    margin-top: 0;
+  }
+
+  p {
+    text-align: center;
+    color: rgb(144, 255, 93);
+    padding: 5px;
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 10px;
+  }
+
+  .login-register {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-top: 1px solid black;
+    color: $white-text-color;
+    text-shadow: 1px 1px 1px black;
+
+    a {
+      text-shadow: 1px 1px 1px black;
+      text-decoration: none;
+      color: $link-color;
+      font-size: medium;
+      font-weight: 900;
+    }
+
+    .register {
+      max-width: 150px;
+      text-align: center;
+      padding: 5px;
+    }
+
+    .login {
+      max-width: 150px;
+      text-align: center;
+      padding: 5px;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@import '/styles/normalize.css';
+@import 'partials/colors';
+@import 'tools/colorPickers';
+@import 'tools/mobile';
+@import 'views/home';
+@import 'views/login';
+@import 'views/register';
+@import 'views/create';
+@import 'views/edit';
+@import 'views/my-notes';
+
+html {
+  overflow: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  opacity: 1;
+  background-image: repeating-linear-gradient(45deg, #080808 25%, transparent 25%, transparent 75%, #080808 75%, #080808),
+    repeating-linear-gradient(45deg, #080808 25%, #000000 25%, #000000 75%, #080808 75%, #080808);
+  background-position: 0 0, 26px 26px;
+  background-size: 52px 52px;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    background-color: $main-background-color;
+
+    .logo {
+      padding-top: 3px;
+
+      img {
+        height: 50px;
+      }
+    }
+
+    .menu {
+      font-family: 'Chakra Petch', sans-serif;
+      padding-right: 15px;
+      padding-top: 18px;
+
+      a {
+        text-shadow: 1px 1px 1px black;
+        text-decoration: none;
+        color: $menu-link-color;
+        font-size: larger;
+        font-weight: 900;
+        transition: all 0.3s;
+
+        &:hover {
+          color: $menu-active-link-color;
+        }
+      }
+    }
+  }
+}
+
+main {
+  flex: 1 0 auto;
+  min-height: calc(100vh - 100px);
+}
+
+footer {
+  flex-shrink: 1;
+  height: 25px;
+  margin-top: 15px;
+
+  .footer {
+    height: 25px;
+    background-color: $main-background-color;
+
+    p {
+      text-align: center;
+      color: $white-text-color;
+      text-shadow: 1px 1px 1px black;
+      margin-bottom: 0;
+      margin-top: 0;
+
+      a {
+        text-shadow: 1px 1px 1px black;
+        text-decoration: none;
+        color: $menu-link-color;
+        font-size: medium;
+        font-weight: 900;
+        padding-left: 5px;
+        transition: all 0.3s;
+
+        &:hover {
+          color: $menu-active-link-color;
+        }
+      }
+    }
+  }
+}
+
+.btnMenu {
+  padding-right: 10px;
+}
+
+.active-btn {
+  color: $menu-active-link-color;
+}

@@ -1,0 +1,44 @@
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  background-color: $main-background-color;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  border: 2px solid $white-text-color;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  h1 {
+    margin: auto;
+    color: $white-text-color;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  label {
+    padding: 15px 0px 5px 20px;
+  }
+
+  input {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  textarea {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+}
+
+#btnEdit {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  width: 200px;
+  cursor: pointer;
+}

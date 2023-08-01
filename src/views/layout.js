@@ -15,7 +15,7 @@ export const layoutTemplate = (userData, content) =>
                 <a href="/logout" class="btnMenu">Logout</a>
               `
             : html`
-                <a href="/login" id="login-btn" "btnMenu">Login</a>
+                <a href="/login" id="login-btn" class="btnMenu">Login</a>
                 <a href="/register" id="register-btn" class="btnMenu">Register</a>
               `}
         </div>

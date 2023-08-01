@@ -1,0 +1,55 @@
+.background-color-container,
+.text-color-container {
+  p {
+    padding: 15px 0px 10px 30px;
+    margin: 0;
+  }
+}
+
+#background-color-picker {
+  all: unset;
+  width: 90%;
+  height: 25px;
+  margin: auto;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.background-color-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+
+  button {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+  }
+}
+
+#text-color-picker {
+  all: unset;
+  width: 90%;
+  height: 25px;
+  margin: auto;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.text-color-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+
+  button {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+  }
+}
