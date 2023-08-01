@@ -7,6 +7,7 @@ export const layoutTemplate = (userData, content) =>
         <div class="logo">
           <a href="/"><img src="./images/logo.png" alt="" /></a>
         </div>
+
         <div class="menu">
           ${userData
             ? html`
