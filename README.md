@@ -32,9 +32,6 @@ This is a web (SPA) application where you can store all your notes!
 * RESTful API communication
 * Deploying the app (github)
 
-### Source
-[Link to source](app.js)<br />
-
 ### Screenshot
 ![screenshot](https://github.com/my-notes-app/my-notes-app.github.io/assets/114406139/37db864a-e5cc-4e6d-993f-59b452a940c5)<br />
 
